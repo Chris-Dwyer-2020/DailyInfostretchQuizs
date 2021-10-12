@@ -3,12 +3,34 @@ package Day4.Puzzle3;
 public class TreeNode {
 
     private int data;
-    private TreeNode left;
-    private TreeNode right;
+    private TreeNode leftChild;
+    private TreeNode rightChild;
 
 
     public TreeNode(int data) {
         this.data = data;
+    }
+
+    public void insert(int value){
+        if (value == data) {
+            return;
+        }
+        if (value < data) {
+            if (leftChild == null) {
+                leftChild = new TreeNode(value);
+            }
+            else {
+                leftChild.insert(value);
+            }
+        }
+        else {
+            if (rightChild == null) {
+                rightChild = new TreeNode(value);
+            }
+            else {
+                rightChild.insert(value);
+            }
+        }
     }
 
     public int getData() {
@@ -19,19 +41,19 @@ public class TreeNode {
         this.data = data;
     }
 
-    public TreeNode getLeft() {
-        return left;
+    public TreeNode getLeftChild() {
+        return leftChild;
     }
 
-    public void setLeft(TreeNode left) {
-        this.left = left;
+    public void setLeftChild(TreeNode leftChild) {
+        this.leftChild = leftChild;
     }
 
-    public TreeNode getRight() {
-        return right;
+    public TreeNode getRightChild() {
+        return rightChild;
     }
 
-    public void setRight(TreeNode right) {
-        this.right = right;
+    public void setRightChild(TreeNode rightChild) {
+        this.rightChild = rightChild;
     }
 }

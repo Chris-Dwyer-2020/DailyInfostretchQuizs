@@ -4,13 +4,12 @@ public class Tree {
 
     private TreeNode root;
 
-    public void insertLeft(int value){
-        if ( root == null ){
+    public void insert(int value) {
+        if (root == null){
             root = new TreeNode(value);
         }
         else {
-            root.insertLeft(value);
+            root.insert(value);
         }
     }
-
 }
