@@ -1,46 +1,21 @@
 package Day4.Puzzle3;
 
+import org.w3c.dom.Node;
+
 public class TreeNode {
 
-    private int data;
-    private TreeNode leftChild;
-    private TreeNode rightChild;
+     private int data;
+     private TreeNode leftChild;
+     private TreeNode rightChild;
 
 
     public TreeNode(int data) {
         this.data = data;
     }
 
-    public void insert(int value){
-        if (value == data) {
-            return;
-        }
-        if (value < data) {
-            if (leftChild == null) {
-                leftChild = new TreeNode(value);
-            }
-            else {
-                leftChild.insert(value);
-            }
-        }
-        else {
-            if (rightChild == null) {
-                rightChild = new TreeNode(value);
-            }
-            else {
-                rightChild.insert(value);
-            }
-        }
-    }
-
     public int getData() {
         return data;
     }
-
-    public void setData(int data) {
-        this.data = data;
-    }
-
     public TreeNode getLeftChild() {
         return leftChild;
     }
@@ -56,4 +31,5 @@ public class TreeNode {
     public void setRightChild(TreeNode rightChild) {
         this.rightChild = rightChild;
     }
+
 }
